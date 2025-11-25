@@ -121,7 +121,7 @@
                                 onclick="handleServerJoin()"
                                 class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-lg rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
                             >
-                                GO TO SERVER
+                                CLAIM NOW
                             </button>
                         </div>
                     </div>
@@ -133,115 +133,4 @@
         render();
     </script>
 </body>
-</html>
-        .character-card.selected {
-            transform: scale(1.1);
-            background-color: rgba(250, 204, 21, 0.2);
-            border-color: #facc15;
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
-        }
-
-        .character-image {
-            width: 128px;
-            height: 128px;
-            margin-bottom: 1rem;
-            object-fit: contain;
-        }
-
-        .go-button {
-            padding: 2rem 3rem;
-            background-color: #dc2626;
-            color: black;
-            font-weight: bold;
-            font-size: 1.25rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .go-button:hover {
-            background-color: #b91c1c;
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .grid-container {
-            display: grid;
-            gap: 2rem;
-            max-width: 80rem;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 3rem; padding-bottom: 2rem;">
-        <h1 style="font-size: 3rem; font-weight: bold; color: white; text-align: center; margin-bottom: 0.5rem;">
-            🔥 FREE BRAINROT 🔥
-        </h1>
-    </div>
-
-    <!-- Characters Grid -->
-    <div class="grid-container" id="charactersGrid"></div>
-
-    <!-- GO TO SERVER Button -->
-    <div style="display: flex; justify-content: center; padding-bottom: 5rem;">
-        <a href="https://shorturl.asia/SG5kH" target="_blank" rel="noopener noreferrer" class="go-button">
-            GO TO SERVER
-        </a>
-    </div>
-
-    <script>
-        let selectedCharacter = null;
-
-        function renderCharacters() {
-            const grid = document.getElementById("charactersGrid");
-            grid.innerHTML = "";
-
-            characters.forEach((character, index) => {
-                const card = document.createElement("div");
-                card.className = "character-card";
-                if (selectedCharacter === index) {
-                    card.classList.add("selected");
-                }
-
-                card.innerHTML = `
-                    <img src="${character.image}" alt="${character.name}" class="character-image">
-                    <p style="color: white; font-size: 1.125rem; font-weight: 500; text-align: center;">${character.name}</p>
-                `;
-
-                card.addEventListener("click", () => {
-                    selectedCharacter = selectedCharacter === index ? null : index;
-                    renderCharacters();
-                });
-
-                grid.appendChild(card);
-            });
-        }
-
-        renderCharacters();
-    </script>
-</body>
-</html>
+</html>                                   
